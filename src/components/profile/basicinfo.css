@@ -1,0 +1,28 @@
+
+
+
+.basicinfo__container {
+
+       margin : 0 auto;
+       width : 50vh;
+       display : flex;
+       flex-direction : column;
+
+
+}
+
+.input {
+
+      padding :0.75em;
+      border-radius : 8px;
+      outline : none;
+      border : none;
+      color : #506a97;
+     
+}
+
+.number__input {
+
+      padding : 0.5em;
+      border-radius : 8px;
+}
