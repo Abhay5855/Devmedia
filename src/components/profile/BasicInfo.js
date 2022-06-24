@@ -1,25 +1,11 @@
-import { Form, Input, InputNumber , Select} from "antd";
+import { Form, Input, InputNumber } from "antd";
 import "./basicinfo.css";
-const { Option } = Select;
+const { TextArea } = Input;
 
 const BasicInfo = ({ formData, setFormData }) => {
  
 
 
-  
-const children = ['React Js' , 'Javascript' , 'Firebase' , 'Node JS' , 'MongoDb' , 'Java' ,'C++' , 'Python' , ];
-
-// for (let i = 10; i < 36; i++) {
-//   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-// }
-
-const handleChange = (value) => {
-      
-    setFormData({...formData , tech : value})
-
-  
-       
-};
 
 const onAgeChange = (value)  => {
 
@@ -36,7 +22,7 @@ const onExperienceChange = (value) => {
     <>
       <div className="basicinfo__container">
         <Form>
-          <p>Please enter user name</p>
+          <p className='details__input'>Please enter user name</p>
           <Form.Item
             rules={[{ required: true, message: "Please input your username!" }]}
           >
@@ -47,7 +33,7 @@ const onExperienceChange = (value) => {
               placeholder="Please enter username"
             />
           </Form.Item>
-          <p>Please enter name</p>
+          <p className='details__input'>Please enter name</p>
           <Form.Item
             rules={[{ required: true, message: "Please input your name!" }]}
           >
@@ -62,7 +48,7 @@ const onExperienceChange = (value) => {
             }}
           >
             <div>
-              <p>Experience</p>
+              <p className='details__input'>Experience</p>
               <Form.Item
                 rules={[
                   { required: true, message: "Please input your experience!" },
@@ -81,7 +67,7 @@ const onExperienceChange = (value) => {
               </Form.Item>
             </div>
             <div>
-              <p>Age</p>
+              <p className='details__input'>Age</p>
               <Form.Item
                 rules={[{ required: true, message: "Please input your age!" }]}
               >
@@ -98,28 +84,11 @@ const onExperienceChange = (value) => {
               </Form.Item>
             </div>
           </div>
-          <p>Choose tech stack</p>
+          <p className='details__input'>Description</p>
           <Form.Item>
-          <Select
-    mode="tags"
-    style={{
-      width: '100%',
-    }}
-    placeholder="Choose stack"
-    onChange={handleChange}
-  >
 
-    {
-        children.map((item , idx) => {
-              return (
-                 
-                <Option onChange={() => handleChange(item)}  key={item}></Option>
-
-              )
-        })
-    }
-    
-  </Select>
+          <TextArea value={formData.tech} onChange={(e) => setFormData({...formData , tech :e.target.value})}  placeholder="Description" />
+       
            
           </Form.Item>
         </Form>

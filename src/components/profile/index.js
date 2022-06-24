@@ -11,9 +11,6 @@ import { addDoc , collection } from "firebase/firestore";
 
 const Profile = () => {
 
-
-
-
       const [step , setStep] = useState(0);
       
 
@@ -85,11 +82,18 @@ const Profile = () => {
     }
 
 
+    const disabled = !formData.name || !formData.userName || !formData.age || !formData.experience ||  !formData.tech || !formData.github;
+
+
       return (
 
         <>
 
         <div className='profile__background'>
+
+          <div className='color'></div>
+          <div className='color'></div>
+          <div className='color'></div>
 
         <div className="profile__container">
 
@@ -115,8 +119,10 @@ const Profile = () => {
 
   
 
-  <button disabled={step === 0} onClick={() => setStep(step -1)}>Previous</button>
+  <button className='prev' disabled={step === 0} onClick={() => setStep(step -1)}>Previous</button>
   <button 
+     className={step === 1 ?  'submit' : 'next'}
+      disabled={step === 1 ? disabled : ''} 
    onClick={() => { if(step === 1) {
 
        handleSubmit();
