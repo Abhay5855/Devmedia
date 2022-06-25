@@ -1,12 +1,10 @@
 
 
 import './sidebar.css'
-
-import { doc } from "firebase/firestore";
-import { db } from "../../firebase";
+import {Link} from "react-router-dom";
 
 
-const SidebarOptions = ({text , Icon, active}) => {
+const SidebarOptions = ({text , Icon, active, routes}) => {
 
 
         return (
@@ -16,15 +14,23 @@ const SidebarOptions = ({text , Icon, active}) => {
 
             </div>
 
+            <Link to={routes}>
+
             <div active  className='sidebaroptions'>
 
+                  
 
-                <div className='icons'>{Icon}</div>
+                  <div className='icons'>{Icon}</div>
                 <h2 className='text'>{text}</h2>
+
+                 
+              
 
 
 
             </div>
+
+            </Link>
 
             </>
         )

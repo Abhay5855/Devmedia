@@ -22,7 +22,7 @@ const Sidebar = () => {
                        return (
                           <div key={idx}>
                          
-                          <SidebarOptions active={item.active} text={item.label} Icon={item.icon} />
+                          <SidebarOptions routes={item.route} active={item.active} text={item.label} Icon={item.icon} />
                           </div>
                        )
                 })
