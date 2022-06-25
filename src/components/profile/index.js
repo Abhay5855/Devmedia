@@ -12,6 +12,7 @@ import { addDoc , collection } from "firebase/firestore";
 const Profile = () => {
 
       const [step , setStep] = useState(0);
+     
       
 
 
@@ -56,7 +57,7 @@ const Profile = () => {
 
 
        await addDoc(collection (db , 'profile') , {
-
+        
         name : formData.name,
         userName : formData.userName,
         age : formData.age,

@@ -10,9 +10,10 @@ import Profile from "../components/profile";
 import ProfileView from "../components/profile_view";
 import Home from "../components/home";
 import { HomeContainer } from "../containers/HomeContainer";
+import { SidebarContainer } from "../containers/SidebarContainer";
 import { MiddleContainer } from "../containers/MiddleContainer";
 import { RestContainer } from "../containers/RestContainer";
-import Tweet from "../components/tweet";
+import Tweet from "../components/tweets_display";
 import Bookmarks from "../components/bookmarks";
 import Explore from "../components/explore";
 
@@ -32,15 +33,18 @@ const Routes = () => {
                 <Route exact path='/details' component={Profile}/>
 
                
-                {/* <HomeContainer> */}
+                <HomeContainer>
 
-                <div>
 
                
-                 
-                <Sidebar />
+                 <SidebarContainer>
 
-                  {/* <MiddleContainer> */}
+                 <Sidebar />
+
+                 </SidebarContainer>
+               
+
+                  <MiddleContainer>
 
                   
                    
@@ -50,19 +54,25 @@ const Routes = () => {
                     <Route exact path='/bookmarks' component={Bookmarks}/>
                     <Route exact path='/explore' component={Explore}/>
 
-                 
+                
+                  </MiddleContainer>
+
                     
+                    
+                <RestContainer>
 
-                
-                  {/* </MiddleContainer> */} 
 
-                {/* </HomeContainer> */}
-                </div>
+</RestContainer> 
+          
 
-                
+                </HomeContainer>
+            
+
                 
 
             </Switch>
+
+      
         
         </Router>
       )

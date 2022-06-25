@@ -8,7 +8,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
   width: 100vw;
-  height: auto;
+  height: 100vh;
+  background: #06141D;
 `;

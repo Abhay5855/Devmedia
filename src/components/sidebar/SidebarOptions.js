@@ -10,27 +10,24 @@ const SidebarOptions = ({text , Icon, active, routes}) => {
         return (
 
               <>
-            <div className='sidebaroptions__container'>
-
-            </div>
+          
 
             <Link to={routes}>
 
-            <div active  className='sidebaroptions'>
+            <div className={`sidebaroptions ${active && 'sidebaroptions--active'}`}>
 
                   
 
                   <div className='icons'>{Icon}</div>
-                <h2 className='text'>{text}</h2>
-
-                 
-              
+                  <h1 className='icon__text'>{text}</h1>
 
 
 
             </div>
 
             </Link>
+
+           
 
             </>
         )

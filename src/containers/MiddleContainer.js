@@ -7,19 +7,10 @@ export const MiddleContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 50%;
-  border: 1px solid #80808038;
-  top: 0;
-  @media (min-width: 1024px) {
-    width: 50%;
-  }
-  @media (max-width: 1023px) {
-    width: 60%;
-  }
-  @media (max-width: 1000px) {
-    width: 85%;
-  }
-  @media (max-width: 500px) {
-    width: 100%;
-  }
+  width: 50vw;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  background : #06141D;
+  padding : 1em;
+
 `;

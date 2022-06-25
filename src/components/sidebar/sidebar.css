@@ -4,38 +4,31 @@
 :root {
 
       --sidebar : #1B98F5;
-      --text : #fff;
-      --hover : #000;
+      --text : #EFF7F9;
+      --hover : #71767B;
+      --twitter : #1D9BF0;
 }
 
 
-.sidebar__container {
-    
-      width : 20vw;
-      height : 100vh;
-      background-color: #000;
-      border-right: #fff;
-      
-       
-}
+
 
 
 .sidebaroptions__container {
 
-      padding-top : 3em;
+      margin-top : 3em;
 }
 
 
-.text {
+.icon__text {
       
-    color : #fff;
+    color : var(--text);
     font-size : 1.3em;
-    font-weight : 800;
+    font-weight : 700;
 }
 .icons {
       padding : 1.1em;
       font-size : 1.3em;
-      color : #fff;
+     
 
 }
 
@@ -44,7 +37,8 @@
     display : flex;
     align-items : center;
     cursor : pointer;
-    padding : 0 2em 0 2em;
+    margin : 2em 2em 0 2em;
+    color : var(--text);
     
    
 }
@@ -52,12 +46,42 @@
 
 .sidebaroptions:hover {
 
-     background : grey;
-     border-radius: 12px;
+     background-color : var(--hover);
+     border-radius: 30px;
      transition:color 100ms ease-out;
-     color : var(--hover);
-     
+     color : var(--twitter);
+    
 
-
-       
 }
+
+
+.sidebaroptions--active {
+
+      color : var(--twitter);
+}
+
+.sidebaroptions__user {
+
+      display : flex;
+      align-items : center;
+
+}
+
+.sidebaroptions__user > img {
+
+   width : 50px;
+   height : 50px;
+   border-radius : 50%;
+}
+
+.sidebar__profile {
+
+
+        display : flex;
+        flex-direction : column;
+        align-items : center;
+        margin-left : 0.75em;
+
+
+}
+

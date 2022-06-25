@@ -10,17 +10,10 @@ export const sidebarData = [{
      route : '/home',
      label : 'Home',
      icon : <GoHome style={{ fontSize: "22px" }} />,
-     active : 'active',
+     active : true,
 
 },
 
-// {
-
-//     route : '',
-// label : '',
-// icon : ,
-
-// },
 {
 
     route : '/explore',
@@ -42,12 +35,6 @@ label : 'Profile',
 icon : <GoPerson  style={{ fontSize: "22px" }} />
 
 },
-// {
-// route : '',
-// label : '',
-// icon : ,
-
-// },
 
 ]
 
