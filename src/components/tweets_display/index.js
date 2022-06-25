@@ -3,6 +3,7 @@
 
 
 import TweetNavbar from "./tweets__navbar/index";
+import TweetUpload from "./tweet__upload/index";
 
 const Tweet = () => {
 
@@ -16,6 +17,8 @@ const Tweet = () => {
 
 
             {/* Add tweet section */}
+
+            <TweetUpload />
 
 
             {/* Display Tweets */}
