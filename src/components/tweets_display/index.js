@@ -4,8 +4,13 @@
 
 import TweetNavbar from "./tweets__navbar/index";
 import TweetUpload from "./tweet__upload/index";
+import ImageModal from "../modals/index";
+
 
 const Tweet = () => {
+
+
+       
 
        return (
 
@@ -22,6 +27,9 @@ const Tweet = () => {
 
 
             {/* Display Tweets */}
+
+
+            <ImageModal />
         </div>
        )
 }

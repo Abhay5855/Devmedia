@@ -2,10 +2,41 @@
 
 import styled from 'styled-components'
 import { Input } from 'antd';
-import { IoMdPhotos, IoMdPlayCircle  } from "react-icons/io";
+import { IoMdPhotos } from "react-icons/io";
+import {useState} from "react";
+import {useRecoilState} from "recoil";
+import {Modalstate} from "../../../recoil/atoms/ModalAtom";
+import {db} from "../../../firebase";
+import { addDoc , collection,serverTimestamp} from "firebase/firestore";
 
 const { TextArea } = Input;
 const TweetUpload = () => {
+
+       
+        const [open , setOpen] =  useRecoilState(Modalstate);
+        const [loading , setLoading] = useState(false);
+
+
+        const [tweet ,setTweet] = useState("");
+       
+
+        const UploadTweet = async() => {
+
+            setLoading(true);
+            
+            await addDoc(collection (db , "posts") , {
+
+              timeStamp : serverTimestamp(),
+              caption : tweet,
+
+                     
+            })
+
+
+            setLoading(false);
+            setTweet("");
+
+        }
 
       
         return (
@@ -21,21 +52,17 @@ const TweetUpload = () => {
                    
                     <div style={{display : 'flex' , flexDirection :'column', width : '100%'}}>
 
-                    <TextArea style={{background : '#28343E', borderRadius : '8px' , color : '#AFB8BD', fontSize : '1em' , fontWeight: '700'  , width : '100%' , letterSpacing : '0.1em'}} rows={4} placeholder="What's happening ?" maxLength={300} />
+                    <TextArea value={tweet} onChange={(e) => setTweet(e.target.value)} style={{background : '#28343E', borderRadius : '8px' , color : '#fff', fontSize : '1.2em' , fontWeight: '700'  , width : '100%' , border : 'none' , outline : 'none'}} rows={4} placeholder="What's happening ?" maxLength={300} />
   
                     <Add>
                     
-                    <IconContainer>
+                    <IconContainer onClick={()  => setOpen(true)}>
                     <IoMdPhotos  style={{fontSize : '22px', color : '#00BA7C', cursor : 'pointer'}} />
                     <Text>Photo</Text>
                     </IconContainer>
-
-                    <IconContainer>
-                    <IoMdPlayCircle  style={{fontSize : '22px', color : '#00BA7C', cursor : 'pointer'}} />
-                    <Text>Video</Text>
-                    </IconContainer>
+    
                   
-                    <Tweet>
+                    <Tweet onClick={(e) => UploadTweet()}>
                        Tweet
                     </Tweet>
 
