@@ -28,6 +28,7 @@
 .icons {
       padding : 1.1em;
       font-size : 1.3em;
+      color : var(--text);
      
 
 }
@@ -38,7 +39,6 @@
     align-items : center;
     cursor : pointer;
     margin : 2em 2em 0 2em;
-    color : var(--text);
     
    
 }
@@ -46,7 +46,7 @@
 
 .sidebaroptions:hover {
 
-     background-color : var(--hover);
+     background : var(--hover);
      border-radius: 30px;
      transition:color 100ms ease-out;
      color : var(--twitter);
@@ -55,7 +55,12 @@
 }
 
 
-.sidebaroptions--active {
+
+.sidebaroptions--active > h1 {
+
+      color : var(--twitter);
+}
+.sidebaroptions--active > div {
 
       color : var(--twitter);
 }

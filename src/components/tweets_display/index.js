@@ -4,6 +4,7 @@
 
 import TweetNavbar from "./tweets__navbar/index";
 import TweetUpload from "./tweet__upload/index";
+import TweetPosts from "./tweet_posts/index";
 import ImageModal from "../modals/index";
 
 
@@ -27,6 +28,10 @@ const Tweet = () => {
 
 
             {/* Display Tweets */}
+
+            <TweetPosts />
+
+            
 
 
             <ImageModal />

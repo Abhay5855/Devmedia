@@ -4,12 +4,25 @@
 
 import './sidebar.css';
 import {useState, useEffect} from 'react';
+import {  useHistory } from "react-router-dom";
 import {sidebarData} from "../../data/data"
 import SidebarOptions from './SidebarOptions';
 import { db } from "../../firebase";
 
 import { query, onSnapshot , collection} from "firebase/firestore";
 const Sidebar = () => {
+
+
+      
+    
+        
+       
+
+       
+
+
+     
+    
        
        const [user , setUser] = useState([]);
   
@@ -42,9 +55,6 @@ const Sidebar = () => {
       
 
 
-       console.log(user);
-
-
        return (
 
         <>
@@ -65,37 +75,7 @@ const Sidebar = () => {
                 })
             }
 
-{/* 
-             <div className='sidebaroptions__user'>
 
-                {
-
-                    user?.map((item, idx) => {
-
-                         return (
-
-                          <>
-                          
-                          <img  src='https://pbs.twimg.com/profile_images/993786179802853376/OoRcUdjq_400x400.jpg' alt=''/>
-
-                          <div className='sidebar__profile'>
-
-                            <p style={{color: 'white'}}>{item.data.name}</p>
-                            <p style={{color: 'white'}}>{item.data.userName}</p>
-                            
-                          </div>
-                          </>
-
-          
-                         )
-
-
-                    })
-                }
-                
-              
-
-            </div> */}
             
         </div>
         

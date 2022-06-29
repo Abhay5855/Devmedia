@@ -1,7 +1,8 @@
 import { useRecoilState } from "recoil";
 import { Modalstate } from "../../recoil/atoms/ModalAtom";
 import { Transition, Dialog } from "@headlessui/react";
-import { Fragment, useEffect } from "react";
+import { message} from 'antd';
+import { Fragment } from "react";
 import { Input } from "antd";
 import { BsFillCameraFill } from "react-icons/bs";
 import { useRef, useState } from "react";
@@ -65,6 +66,8 @@ const UploadPost = async() => {
 
                  image : downloadURL
            })
+
+           message.success('Post Uploaded');
       })
 
        setOpen(false);
@@ -73,6 +76,8 @@ const UploadPost = async() => {
        setDescription("");
 }
 
+
+const disabled =  !selectedFile || !description;
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -105,7 +110,7 @@ const UploadPost = async() => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-full sm:p-6">
+            <div className="inline-block align-bottom bg-[#06141D] rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-full sm:p-6">
               <div>
                 {/* Camera icon */}
 
@@ -130,7 +135,7 @@ const UploadPost = async() => {
                 <div className="mt-3 text-center sm:mt-5">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg leading-6 font-medium text-gray-900"
+                    className="text-lg leading-6 font-medium text-[#fff]"
                   >
                     Upload a photo
                   </Dialog.Title>
@@ -151,11 +156,10 @@ const UploadPost = async() => {
                       style={{
                         background: "none",
                         borderRadius: "8px",
-                        color: "#000",
+                        color: "#fff",
                         fontSize: "1.2em",
                         fontWeight: "600",
                         width: "100%",
-                        letterSpacing: "0.1em",
                         border: "none",
                         outline: "none",
                       }}
@@ -170,8 +174,8 @@ const UploadPost = async() => {
                 <button
                   onClick={() => UploadPost()}
                   type="button"
-                  //    disabled={@disabled}
-                  className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#00BA7C] text-base font-medium text-white focus:outline-none disabled:cursor-not-allowed disabled:bg-[#00BA7C] disabled:bg-opacity-70 focus:ring-red-500"
+                     disabled={disabled}
+                  className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#00BA7C] text-base font-medium text-white focus:outline-none disabled:cursor-not-allowed disabled:bg-[#00BA7C] disabled:bg-opacity-50 focus:ring-red-500"
                 >
                   {loading ? "...Uploading" :  "Upload Post"}
                 </button>

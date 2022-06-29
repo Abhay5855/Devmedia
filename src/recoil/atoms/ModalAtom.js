@@ -10,8 +10,3 @@ default : false,
 });
 
 
-export const Videostate = atom({
-
-     key : 'vidoState',
-     default : false,
-})

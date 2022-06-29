@@ -17,9 +17,13 @@ const SidebarOptions = ({text , Icon, active, routes}) => {
             <div className={`sidebaroptions ${active && 'sidebaroptions--active'}`}>
 
                   
-
-                  <div className='icons'>{Icon}</div>
+                    
+                     
+                    <div className='icons'>{Icon}</div>
                   <h1 className='icon__text'>{text}</h1>
+
+               
+                 
 
 
 
